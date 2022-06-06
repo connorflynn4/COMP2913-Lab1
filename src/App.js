@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import Albums from "./Albums"
+import albums from "./data";
 import './App.css';
+import TrackImage from "./TrackImage";
+import TrackList from "./TrackList";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    <div className="rowC">
+      {albums.filter(album => album.name === "Sgt. Peppers Lonely Hearts Club Band").map(filteredAlbum => (
+        <TrackImage coverImg={filteredAlbum.coverImg}/>
+      ))}
+      <TrackList />
+      </div>
+      <div>
+    <h1>Select an Album</h1>
+    { albums.map ((album) => (
+      <Albums name={album.name} coverImg ={album.coverImg} />
+    ))}
+    </div>
     </div>
   );
 }
