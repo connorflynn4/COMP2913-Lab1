@@ -1,21 +1,26 @@
-import React from 'react'
-import albums from "./data";
 
-
-export default function TrackList(){
-    return (
+const TrackList = ({album}) => {
+  const { name, coverImg, tracks } = album;
+  let styles = { height: "400px" };
+  let listStyles = { padding: "20px" };
+  return (
+    <div className="flex-row">
+      <>
       <div>
-        {albums.filter(album => album.name === "Sgt. Peppers Lonely Hearts Club Band").map(filteredAlbum => (
-        <div>
-        <ol>
-        <li>{filteredAlbum.tracks[0]} &#9654;&#65039;</li>
-        <li>{filteredAlbum.tracks[1]} &#9654;&#65039;</li>
-        <li>{filteredAlbum.tracks[2]} &#9654;&#65039;</li>
-        <li>{filteredAlbum.tracks[3]} &#9654;&#65039;</li>
-        </ol>
-        </div>
-      ))}
+      <img style={styles} src={coverImg} alt={name} />
       </div>
-    )
-    
-  }
+      <div style={listStyles}>
+        <ol>
+        <li>{tracks[0]} &#9654;&#65039;</li>
+        <li>{tracks[1]} &#9654;&#65039;</li>
+        <li>{tracks[2]} &#9654;&#65039;</li>
+        <li>{tracks[3]} &#9654;&#65039;</li>
+        </ol>
+     
+      </div>
+      </>
+    </div>
+  );
+}
+
+export default TrackList

@@ -3,6 +3,9 @@ margin: 0;
 padding: 0;
 background-color: black;
 }
+p {
+  color: white;
+}
 
 h1{
   color: white;
@@ -16,6 +19,21 @@ span{
 
 li{
   color:white;
+  font-size: 30px;
+  padding-right: 20px;
 }
 
-.rowC{display:flex; flex-direction:row;}
+.flex-row{
+  display:flex; 
+  flex-direction:row;
+  margin:50px;
+}
+
+label{
+  font-size: 30px;
+  color: white;
+}
+
+input[type=checkbox] {
+  visibility: hidden;
+}
